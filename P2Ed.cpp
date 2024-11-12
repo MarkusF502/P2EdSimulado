@@ -190,7 +190,7 @@ NO* insereArvore(NO* no, int valor)
 		return no;
 	}
 
-	// atualiza a altura do no (lembre-se que esta é função recursiva)
+	// atualiza a altura do no (lembre-se que esta Ã© funÃ§Ã£o recursiva)
 
 	no->altura = max(alturaNo(no->esq), alturaNo(no->dir)) + 1;
 
@@ -283,7 +283,13 @@ void exibirElementosArvore(NO* no, int qtEspacos)
 
 void exibirElementosEmOrdem(NO* no)
 {
-	
+	if (no == NULL) {
+    return;
+} else {
+    exibirElementosEmOrdem(no->esq);  
+    cout << no->valor << " ";         
+    exibirElementosEmOrdem(no->dir);  
+}
 }
 
 void buscarElementoArvore(NO* no, int valor)
